@@ -1,13 +1,12 @@
 //
 //  AppDelegate.m
-//  UITagFieldExample
+//  SMTagFieldExample
 //
 //  Created by Shai Mishali on 6/19/13.
 //  Copyright (c) 2013 Shai Mishali. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
 #import "ViewController.h"
 
 @implementation AppDelegate
@@ -16,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.viewController = [[ViewController alloc] init];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

@@ -1,16 +1,16 @@
 //
 //  ViewController.h
-//  UITagFieldExample
+//  SMTagFieldExample
 //
 //  Created by Shai Mishali on 6/19/13.
 //  Copyright (c) 2013 Shai Mishali. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "UITagField.h"
+#import "SMTagField.h"
 
-@interface ViewController : UIViewController <UITagFieldDelegate>{
-    UITagField  *tagField;
+@interface ViewController : UIViewController <SMTagFieldDelegate>{
+    SMTagField  *tagField;
     UITextView  *log;
 }
 

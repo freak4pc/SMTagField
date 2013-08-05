@@ -1,17 +1,17 @@
-UITagField
+SMTagField
 ==========
 
-**UITagField** is an implementation of UITextField that allows for easy input/display of Tags
+**SMTagField** is an implementation of UITextField that allows for easy input/display of Tags
 
-![UITagField Screenshot](http://i40.tinypic.com/2crqd8j.jpg "UITagField Screenshot")
+![SMTagField Screenshot](http://i40.tinypic.com/2crqd8j.jpg "SMTagField Screenshot")
 
 USAGE
 -----
-Just initialize **UITagField**, set the delegate (Optional), add to your parent view, and you're good to go!
-Check out the "UITagFieldExample" Xcode project which shows a basic working example.
+Just initialize **SMTagField**, set the delegate (Optional), add to your parent view, and you're good to go!
+Check out the "SMTagFieldExample" Xcode project which shows a basic working example.
 
 ```objc
-tagField                = [[UITagField alloc] initWithFrame: CGRectMake(20, 20, 280, 0)]; // Height is always 30, you shouldn't modify it.
+tagField                = [[SMTagField alloc] initWithFrame: CGRectMake(20, 20, 280, 0)]; // Height is always 30, you shouldn't modify it.
 tagField.tagDelegate    = self;
 
 [self.view addSubview: tagField];

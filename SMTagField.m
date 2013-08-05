@@ -1,13 +1,13 @@
 //
-//  UITagField.m
+//  SMTagField.m
 //
 //  Created by Shai Mishali on 6/16/13.
 //  Copyright (c) 2013 Shai Mishali. All rights reserved.
 //
 
-#import "UITagField.h"
+#import "SMTagField.h"
 
-@interface UITagField(){
+@interface SMTagField(){
     UIView              *tagsView;
     UIView              *paddingView;
 }
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation UITagField
+@implementation SMTagField
 @synthesize tags;
 @synthesize tagDelegate;
 
@@ -139,7 +139,7 @@
     paddingView.frame       = paddingFrame;
     
     for(NSString *txtTag in tags){
-        UITag *tag              = [[UITag alloc] initWithTag: txtTag];
+        SMTag *tag              = [[SMTag alloc] initWithTag: txtTag];
         
         [tag addTarget:self action:@selector(tagTapped:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -164,7 +164,7 @@
 
     if(missingWidth > 0){
         // Remove old tags
-        for(UITag *tag in tagsView.subviews){
+        for(SMTag *tag in tagsView.subviews){
             if(missingWidth < 0)
                 break;
             
@@ -183,7 +183,7 @@
         paddingView.frame           = paddingFrame;
         
         // Reposition
-        for(UITag *tag in tagsView.subviews){
+        for(SMTag *tag in tagsView.subviews){
             CGRect tagFrame         = tag.frame;
             tagFrame.origin.x       = tagsView.frame.size.width + 5;
             tagFrame.origin.y       = (self.frame.size.height - tag.frame.size.height) / 2;

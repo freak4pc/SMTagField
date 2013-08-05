@@ -1,5 +1,5 @@
 //
-//  UITag.h
+//  SMTag.h
 //
 //  Created by Shai Mishali on 6/3/13.
 //  Copyright (c) 2013 Shai Mishali. All rights reserved.
@@ -9,10 +9,10 @@
 #import <QuartzCore/QuartzCore.h>
 
 /**
- UITag is a UIButton extension representing a Tag. 
- You can alter the appearance of the UITag object by using its backgroundColor, borderColor, font and textColor elements.
+ SMTag is a UIButton extension representing a Tag. 
+ You can alter the appearance of the SMTag object by using its backgroundColor, borderColor, font and textColor elements.
  */
-@interface UITag : UIButton
+@interface SMTag : UIButton
 
 -(id)initWithTag: (NSString *) tag;
 

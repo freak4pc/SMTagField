@@ -1,6 +1,6 @@
 //
 //  main.m
-//  UITagFieldExample
+//  SMTagFieldExample
 //
 //  Created by Shai Mishali on 6/19/13.
 //  Copyright (c) 2013 Shai Mishali. All rights reserved.

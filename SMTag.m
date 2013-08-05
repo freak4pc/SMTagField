@@ -1,13 +1,13 @@
 //
-//  UITag.m
+//  SMTag.m
 //
 //  Created by Shai Mishali on 6/3/13.
 //  Copyright (c) 2013 Shai Mishali. All rights reserved.
 //
 
-#import "UITag.h"
+#import "SMTag.h"
 
-@implementation UITag
+@implementation SMTag
 @synthesize value;
 @dynamic borderColor, font, textColor;
 

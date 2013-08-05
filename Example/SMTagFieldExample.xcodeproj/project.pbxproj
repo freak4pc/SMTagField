@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		787665671771C9E5006F4888 /* UITag.m in Sources */ = {isa = PBXBuildFile; fileRef = 787665641771C9E5006F4888 /* UITag.m */; };
-		787665681771C9E5006F4888 /* UITagField.m in Sources */ = {isa = PBXBuildFile; fileRef = 787665661771C9E5006F4888 /* UITagField.m */; };
+		787665671771C9E5006F4888 /* SMTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 787665641771C9E5006F4888 /* SMTag.m */; };
+		787665681771C9E5006F4888 /* SMTagField.m in Sources */ = {isa = PBXBuildFile; fileRef = 787665661771C9E5006F4888 /* SMTagField.m */; };
 		78A439951771C99E00BD1AE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A439941771C99E00BD1AE5 /* UIKit.framework */; };
 		78A439971771C99E00BD1AE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A439961771C99E00BD1AE5 /* Foundation.framework */; };
 		78A439991771C99E00BD1AE5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A439981771C99E00BD1AE5 /* CoreGraphics.framework */; };
@@ -22,21 +22,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		781AA856177857AD00D505B5 /* UITagFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITagFieldDelegate.h; path = ../../UITagFieldDelegate.h; sourceTree = "<group>"; };
-		787665631771C9E5006F4888 /* UITag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITag.h; path = ../../UITag.h; sourceTree = "<group>"; };
-		787665641771C9E5006F4888 /* UITag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITag.m; path = ../../UITag.m; sourceTree = "<group>"; };
-		787665651771C9E5006F4888 /* UITagField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITagField.h; path = ../../UITagField.h; sourceTree = "<group>"; };
-		787665661771C9E5006F4888 /* UITagField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITagField.m; path = ../../UITagField.m; sourceTree = "<group>"; };
-		78A439911771C99E00BD1AE5 /* UITagFieldExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITagFieldExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		781AA856177857AD00D505B5 /* SMTagFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTagFieldDelegate.h; sourceTree = "<group>"; };
+		787665631771C9E5006F4888 /* SMTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SMTag.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		787665641771C9E5006F4888 /* SMTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SMTag.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		787665651771C9E5006F4888 /* SMTagField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SMTagField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		787665661771C9E5006F4888 /* SMTagField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTagField.m; sourceTree = "<group>"; };
+		78A439911771C99E00BD1AE5 /* SMTagFieldExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMTagFieldExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A439941771C99E00BD1AE5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78A439961771C99E00BD1AE5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78A439981771C99E00BD1AE5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		78A4399C1771C99E00BD1AE5 /* UITagFieldExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UITagFieldExample-Info.plist"; sourceTree = "<group>"; };
+		78A4399C1771C99E00BD1AE5 /* SMTagFieldExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SMTagFieldExample-Info.plist"; sourceTree = "<group>"; };
 		78A4399E1771C99E00BD1AE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		78A439A01771C99E00BD1AE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		78A439A21771C99E00BD1AE5 /* UITagFieldExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITagFieldExample-Prefix.pch"; sourceTree = "<group>"; };
-		78A439A31771C99E00BD1AE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		78A439A41771C99E00BD1AE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		78A439A01771C99E00BD1AE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		78A439A21771C99E00BD1AE5 /* SMTagFieldExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SMTagFieldExample-Prefix.pch"; sourceTree = "<group>"; };
+		78A439A31771C99E00BD1AE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		78A439A41771C99E00BD1AE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78A439A61771C99E00BD1AE5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		78A439A81771C99E00BD1AE5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		78A439AA1771C99E00BD1AE5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -58,22 +58,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		787665621771C9D6006F4888 /* UITagField */ = {
+		787665621771C9D6006F4888 /* SMTagField */ = {
 			isa = PBXGroup;
 			children = (
-				787665631771C9E5006F4888 /* UITag.h */,
-				787665641771C9E5006F4888 /* UITag.m */,
-				787665651771C9E5006F4888 /* UITagField.h */,
-				787665661771C9E5006F4888 /* UITagField.m */,
-				781AA856177857AD00D505B5 /* UITagFieldDelegate.h */,
+				787665631771C9E5006F4888 /* SMTag.h */,
+				787665641771C9E5006F4888 /* SMTag.m */,
+				787665651771C9E5006F4888 /* SMTagField.h */,
+				787665661771C9E5006F4888 /* SMTagField.m */,
+				781AA856177857AD00D505B5 /* SMTagFieldDelegate.h */,
 			);
-			name = UITagField;
+			name = SMTagField;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		78A439881771C99E00BD1AE5 = {
 			isa = PBXGroup;
 			children = (
-				78A4399A1771C99E00BD1AE5 /* UITagFieldExample */,
+				78A4399A1771C99E00BD1AE5 /* SMTagFieldExample */,
 				78A439931771C99E00BD1AE5 /* Frameworks */,
 				78A439921771C99E00BD1AE5 /* Products */,
 			);
@@ -82,7 +83,7 @@
 		78A439921771C99E00BD1AE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				78A439911771C99E00BD1AE5 /* UITagFieldExample.app */,
+				78A439911771C99E00BD1AE5 /* SMTagFieldExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,26 +98,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		78A4399A1771C99E00BD1AE5 /* UITagFieldExample */ = {
+		78A4399A1771C99E00BD1AE5 /* SMTagFieldExample */ = {
 			isa = PBXGroup;
 			children = (
-				787665621771C9D6006F4888 /* UITagField */,
+				787665621771C9D6006F4888 /* SMTagField */,
 				78A439A31771C99E00BD1AE5 /* AppDelegate.h */,
 				78A439A41771C99E00BD1AE5 /* AppDelegate.m */,
 				78A439AC1771C99E00BD1AE5 /* ViewController.h */,
 				78A439AD1771C99E00BD1AE5 /* ViewController.m */,
 				78A4399B1771C99E00BD1AE5 /* Supporting Files */,
 			);
-			path = UITagFieldExample;
+			path = SMTagFieldExample;
 			sourceTree = "<group>";
 		};
 		78A4399B1771C99E00BD1AE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				78A4399C1771C99E00BD1AE5 /* UITagFieldExample-Info.plist */,
+				78A4399C1771C99E00BD1AE5 /* SMTagFieldExample-Info.plist */,
 				78A4399D1771C99E00BD1AE5 /* InfoPlist.strings */,
 				78A439A01771C99E00BD1AE5 /* main.m */,
-				78A439A21771C99E00BD1AE5 /* UITagFieldExample-Prefix.pch */,
+				78A439A21771C99E00BD1AE5 /* SMTagFieldExample-Prefix.pch */,
 				78A439A61771C99E00BD1AE5 /* Default.png */,
 				78A439A81771C99E00BD1AE5 /* Default@2x.png */,
 				78A439AA1771C99E00BD1AE5 /* Default-568h@2x.png */,
@@ -127,9 +128,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		78A439901771C99E00BD1AE5 /* UITagFieldExample */ = {
+		78A439901771C99E00BD1AE5 /* SMTagFieldExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78A439B41771C99E00BD1AE5 /* Build configuration list for PBXNativeTarget "UITagFieldExample" */;
+			buildConfigurationList = 78A439B41771C99E00BD1AE5 /* Build configuration list for PBXNativeTarget "SMTagFieldExample" */;
 			buildPhases = (
 				78A4398D1771C99E00BD1AE5 /* Sources */,
 				78A4398E1771C99E00BD1AE5 /* Frameworks */,
@@ -139,9 +140,9 @@
 			);
 			dependencies = (
 			);
-			name = UITagFieldExample;
+			name = SMTagFieldExample;
 			productName = UITagFieldExample;
-			productReference = 78A439911771C99E00BD1AE5 /* UITagFieldExample.app */;
+			productReference = 78A439911771C99E00BD1AE5 /* SMTagFieldExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -153,7 +154,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Shai Mishali";
 			};
-			buildConfigurationList = 78A4398C1771C99E00BD1AE5 /* Build configuration list for PBXProject "UITagFieldExample" */;
+			buildConfigurationList = 78A4398C1771C99E00BD1AE5 /* Build configuration list for PBXProject "SMTagFieldExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -165,7 +166,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				78A439901771C99E00BD1AE5 /* UITagFieldExample */,
+				78A439901771C99E00BD1AE5 /* SMTagFieldExample */,
 			);
 		};
 /* End PBXProject section */
@@ -192,8 +193,8 @@
 				78A439A11771C99E00BD1AE5 /* main.m in Sources */,
 				78A439A51771C99E00BD1AE5 /* AppDelegate.m in Sources */,
 				78A439AE1771C99E00BD1AE5 /* ViewController.m in Sources */,
-				787665671771C9E5006F4888 /* UITag.m in Sources */,
-				787665681771C9E5006F4888 /* UITagField.m in Sources */,
+				787665671771C9E5006F4888 /* SMTag.m in Sources */,
+				787665681771C9E5006F4888 /* SMTagField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +272,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UITagFieldExample/UITagFieldExample-Prefix.pch";
-				INFOPLIST_FILE = "UITagFieldExample/UITagFieldExample-Info.plist";
+				GCC_PREFIX_HEADER = "SMTagFieldExample/SMTagFieldExample-Prefix.pch";
+				INFOPLIST_FILE = "SMTagFieldExample/SMTagFieldExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SMTagFieldExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -283,10 +284,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UITagFieldExample/UITagFieldExample-Prefix.pch";
-				INFOPLIST_FILE = "UITagFieldExample/UITagFieldExample-Info.plist";
+				GCC_PREFIX_HEADER = "SMTagFieldExample/SMTagFieldExample-Prefix.pch";
+				INFOPLIST_FILE = "SMTagFieldExample/SMTagFieldExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SMTagFieldExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -294,7 +295,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		78A4398C1771C99E00BD1AE5 /* Build configuration list for PBXProject "UITagFieldExample" */ = {
+		78A4398C1771C99E00BD1AE5 /* Build configuration list for PBXProject "SMTagFieldExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78A439B21771C99E00BD1AE5 /* Debug */,
@@ -303,7 +304,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78A439B41771C99E00BD1AE5 /* Build configuration list for PBXNativeTarget "UITagFieldExample" */ = {
+		78A439B41771C99E00BD1AE5 /* Build configuration list for PBXNativeTarget "SMTagFieldExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78A439B51771C99E00BD1AE5 /* Debug */,

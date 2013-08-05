@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'UITagFieldExample' target in the 'UITagFieldExample' project
+// Prefix header for all source files of the 'SMTagFieldExample' target in the 'SMTagFieldExample' project
 //
 
 #import <Availability.h>

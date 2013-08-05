@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  UITagFieldExample
+//  SMTagFieldExample
 //
 //  Created by Shai Mishali on 6/19/13.
 //  Copyright (c) 2013 Shai Mishali. All rights reserved.
@@ -18,7 +18,9 @@
 {
     [super viewDidLoad];
     
-    tagField                = [[UITagField alloc] initWithFrame: CGRectMake(20, 20, 280, 0)]; // Height is always 30, you shouldn't modify it.
+    self.view.backgroundColor  = [UIColor grayColor];
+    
+    tagField                = [[SMTagField alloc] initWithFrame: CGRectMake(20, 20, 280, 0)]; // Height is always 30, you shouldn't modify it.
     tagField.tagDelegate    = self;
     
     log                     = [[UITextView alloc] initWithFrame: CGRectMake(20, 60, 280, 180)];
@@ -31,13 +33,13 @@
     tagField.tags = @[@"Tag1", @"Tag2", @"Tag3"];
 }
 
-#pragma mark - UITagField delegate
--(void)tagField:(UITagField *)tagField tagAdded:(NSString *)tag{
+#pragma mark - SMTagField delegate
+-(void)tagField:(SMTagField *)tagField tagAdded:(NSString *)tag{
     log.text                = [log.text stringByAppendingFormat:@"\nTag Added: %@", tag];
     [log scrollRangeToVisible: NSMakeRange(log.text.length - 1, 1)];
 }
 
--(void)tagField:(UITagField *)tagField tagRemoved:(NSString *)tag{
+-(void)tagField:(SMTagField *)tagField tagRemoved:(NSString *)tag{
     log.text                = [log.text stringByAppendingFormat:@"\nTag Removed: %@", tag];
     [log scrollRangeToVisible: NSMakeRange(log.text.length - 1, 1)];
 }
