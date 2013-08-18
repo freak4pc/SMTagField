@@ -7,6 +7,7 @@
 
 #import "SMTagField.h"
 
+#include "objc/runtime.h"
 @interface SMTagField(){
     UIView              *tagsView;
     UIView              *paddingView;
@@ -123,9 +124,78 @@
         
         [self layoutTags];
     }
-    
-    [super deleteBackward];
 }
+
+- (Class)registerMyFieldEditor {
+    Class uiFieldEditorClass = objc_lookUpClass("UIFieldEditor");
+    Class myFieldEditorClass = NULL;
+    
+    if (uiFieldEditorClass) {
+        // Register the new class
+        myFieldEditorClass = objc_allocateClassPair(uiFieldEditorClass, [SubclassName UTF8String], 0);
+        objc_registerClassPair(myFieldEditorClass);
+        
+        // Add the new deleteBackward implementation
+        IMP fieldEditor_deleteBackwardIMP = [self methodForSelector:@selector(fieldEditor_deleteBackward)];
+        Method fieldEditor_deleteBackwardMethod = class_getInstanceMethod(myFieldEditorClass,
+                                                                          @selector(fieldEditor_deleteBackward));
+        const char *types = method_getTypeEncoding(fieldEditor_deleteBackwardMethod);
+        
+        class_addMethod(myFieldEditorClass, @selector(deleteBackward), fieldEditor_deleteBackwardIMP, types);
+    }
+    return myFieldEditorClass;
+}
+
+static NSString * const SubclassName = @"SMTagFieldEditor";
+
+static void *BackwardDeleteTargetKey = &BackwardDeleteTargetKey;
+
+- (BOOL)becomeFirstResponder {
+    BOOL shouldBecome = [super becomeFirstResponder];
+    if (shouldBecome == NO) {
+        return NO;
+    }
+    
+    Class myFieldEditorClass = objc_lookUpClass([SubclassName UTF8String]);
+    if (myFieldEditorClass == nil) {
+        myFieldEditorClass = [self registerMyFieldEditor];
+    }
+    
+    id fieldEditor = [self valueForKey:@"fieldEditor"];
+    
+    if (fieldEditor && myFieldEditorClass) {
+        object_setClass(fieldEditor, myFieldEditorClass);
+        objc_setAssociatedObject(fieldEditor, BackwardDeleteTargetKey, self, OBJC_ASSOCIATION_ASSIGN);
+    }
+    
+    return YES;
+}
+
+- (BOOL)resignFirstResponder {
+    BOOL shouldResign = [super resignFirstResponder];
+    if (shouldResign == NO) {
+        return NO;
+    }
+    
+    id fieldEditor = [self valueForKey:@"fieldEditor"];
+    
+    if (fieldEditor) {
+        objc_setAssociatedObject(fieldEditor, BackwardDeleteTargetKey, nil, OBJC_ASSOCIATION_ASSIGN);
+        Class uiFieldEditorClass = objc_lookUpClass("UIFieldEditor");
+        if (uiFieldEditorClass) {
+            object_setClass(fieldEditor, uiFieldEditorClass);
+        }
+    }
+    return YES;
+}
+
+- (void)fieldEditor_deleteBackward {
+    
+    SMTagField *textField = objc_getAssociatedObject(self, BackwardDeleteTargetKey);
+    [textField deleteBackward];
+}
+
+
 
 -(void)layoutTags{    
     [tagsView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
