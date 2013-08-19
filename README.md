@@ -5,6 +5,9 @@ SMTagField
 
 ![SMTagField Screenshot](http://i40.tinypic.com/2crqd8j.jpg "SMTagField Screenshot")
 
+***Supports iOS >= 6.0***
+
+
 USAGE
 -----
 Just initialize **SMTagField**, set the delegate (Optional), add to your parent view, and you're good to go!
