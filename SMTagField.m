@@ -13,6 +13,7 @@
 }
 
 -(void) layoutTags;
+-(void) setupUI;
 
 @end
 
@@ -23,35 +24,14 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame: CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 30)]) {
-        self.backgroundColor        = [UIColor whiteColor];
-        self.opaque                 = NO;
-        self.autocorrectionType     = UITextAutocorrectionTypeNo;
-        tags                        = @[];  
-    
-        tagsView                    = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 0, 0)];
-        tagsView.backgroundColor    = [UIColor clearColor];
-        
-        paddingView                 = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 0, 20)];
-        paddingView.backgroundColor = [UIColor clearColor];
-        paddingView.opaque          = NO;
-        
-        self.leftView               = paddingView;
-        self.leftViewMode           = UITextFieldViewModeAlways;
-
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(textFieldDidChange:)
-                                                      name:@"UITextFieldTextDidChangeNotification"
-                                                   object:nil];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(textFieldDidEndEditing:)
-                                                     name:@"UITextFieldTextDidEndEditingNotification"
-                                                   object:nil];
-        
-        [self addSubview: tagsView];
+        [self setupUI];
     }
     
     return self;
+}
+
+-(id)init{
+    return [self initWithFrame: CGRectMake(0, 0, 100, 30)];
 }
 
 -(void)setFrame:(CGRect)frame{
@@ -127,7 +107,57 @@
     [super deleteBackward];
 }
 
--(void)layoutTags{    
+-(void)setTags:(NSArray *)aTags{
+    tags = aTags;
+    [self layoutTags];
+}
+
+#pragma mark - View Flow
+
+-(void)awakeFromNib{
+    [self setupUI];
+    [super awakeFromNib];
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UITextFieldTextDidChangeNotification" object:nil];
+}
+
+#pragma mark - Private Methods
+-(void)setupUI{
+    self.backgroundColor        = [UIColor whiteColor];
+    self.opaque                 = NO;
+    self.autocorrectionType     = UITextAutocorrectionTypeNo;
+    self.borderStyle            = UITextBorderStyleNone;
+    
+    tags                        = @[];
+    
+    tagsView                    = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 0, 0)];
+    tagsView.backgroundColor    = [UIColor clearColor];
+    
+    paddingView                 = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 0, 20)];
+    paddingView.backgroundColor = [UIColor clearColor];
+    paddingView.opaque          = NO;
+    
+    self.leftView               = paddingView;
+    self.leftViewMode           = UITextFieldViewModeAlways;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldDidChange:)
+                                                 name:@"UITextFieldTextDidChangeNotification"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldDidEndEditing:)
+                                                 name:@"UITextFieldTextDidEndEditingNotification"
+                                               object:nil];
+    
+    // Add tagsView if that didn't happen for some god-awful reason
+    if(![tagsView isDescendantOfView: self])
+        [self addSubview: tagsView];
+}
+
+-(void)layoutTags{
     [tagsView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     CGRect tagsFrame        = tagsView.frame;
@@ -158,10 +188,10 @@
         
         [tagsView addSubview: tag];
     }
-
+    
     // If there's not enough room, free up first tags and reposition next ones
     CGFloat missingWidth= (tagsView.frame.size.width - self.frame.size.width + 40);
-
+    
     if(missingWidth > 0){
         // Remove old tags
         for(SMTag *tag in tagsView.subviews){
@@ -203,15 +233,6 @@
     
     if([tagDelegate respondsToSelector:@selector(tagField:tagsChanged:)])
         [tagDelegate tagField: self tagsChanged: tags];
-}
-
--(void)setTags:(NSArray *)aTags{
-    tags = aTags;
-    [self layoutTags];
-}
-
--(void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UITextFieldTextDidChangeNotification" object:nil];
 }
 
 @end

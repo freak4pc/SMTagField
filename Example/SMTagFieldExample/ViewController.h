@@ -10,8 +10,8 @@
 #import "SMTagField.h"
 
 @interface ViewController : UIViewController <SMTagFieldDelegate>{
-    SMTagField  *tagField;
-    UITextView  *log;
+    IBOutlet    SMTagField  *tagField;
+    IBOutlet    UITextView  *log;
 }
 
 @end

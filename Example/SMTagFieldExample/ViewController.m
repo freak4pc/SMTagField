@@ -18,19 +18,12 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor  = [UIColor grayColor];
+    self.view.backgroundColor   = [UIColor grayColor];
     
-    tagField                = [[SMTagField alloc] initWithFrame: CGRectMake(20, 20, 280, 0)]; // Height is always 30, you shouldn't modify it.
-    tagField.tagDelegate    = self;
+    log.editable                = NO;
+    tagField.tagDelegate        = self;
     
-    log                     = [[UITextView alloc] initWithFrame: CGRectMake(20, 60, 280, 180)];
-    log.editable            = NO;
-    
-    [self.view addSubview: tagField];
-    [self.view addSubview: log];
-    
-    // Set some tags to begin with
-    tagField.tags = @[@"Tag1", @"Tag2", @"Tag3"];
+    tagField.tags               = @[@"Tag1", @"Tag2", @"Tag3"];
 }
 
 #pragma mark - SMTagField delegate
