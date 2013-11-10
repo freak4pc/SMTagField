@@ -68,15 +68,20 @@
         }
         
         if([tags indexOfObject: txtTag] == NSNotFound){
-            NSMutableArray *muteTags = [tags mutableCopy];
-            [muteTags addObject: txtTag];
-            tags = muteTags;
-            
-            if([tagDelegate respondsToSelector: @selector(tagField:tagAdded:)]){
-                [tagDelegate tagField:self tagAdded:txtTag];
+            // Add tags
+            BOOL shouldAddtag = (![tagDelegate respondsToSelector: @selector(tagField:shouldAddTag:)])?YES:[tagDelegate tagField:self shouldAddTag:txtTag];
+                                 
+            if (shouldAddtag){
+                NSMutableArray *muteTags = [tags mutableCopy];
+                [muteTags addObject: txtTag];
+                tags = muteTags;
+                
+                if([tagDelegate respondsToSelector: @selector(tagField:tagAdded:)]){
+                    [tagDelegate tagField:self tagAdded:txtTag];
+                }
+                
+                [self layoutTags];
             }
-            
-            [self layoutTags];
         }
         
         self.text       = @"";
@@ -121,6 +126,7 @@
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UITextFieldTextDidChangeNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UITextFieldTextDidEndEditingNotification" object:nil];
 }
 
 #pragma mark - Private Methods

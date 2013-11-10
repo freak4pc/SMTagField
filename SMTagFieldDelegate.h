@@ -36,4 +36,10 @@
  */
 -(void) tagField: (SMTagField *) tagField tagsChanged: (NSArray *) tags;
 
+/**
+ Tells SMTagField whether or not it should add a new tag. This could be used to limit the number of tags or blacklist bad words, etc...
+ Defaults to YES if protocol isn't implemented.
+ */
+-(BOOL) tagField: (SMTagField *) tagField shouldAddTag: (NSString *) tag;
+
 @end
