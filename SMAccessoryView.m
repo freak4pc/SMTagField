@@ -2,7 +2,7 @@
 //  SMAccessoryView.m
 //  SMTagFieldExample
 //
-//  Created by Yaakov Shurpin on 11/12/13.
+//  Created by Jack Shurpin on 11/12/13.
 //  Copyright (c) 2013 Shai Mishali. All rights reserved.
 //
 
