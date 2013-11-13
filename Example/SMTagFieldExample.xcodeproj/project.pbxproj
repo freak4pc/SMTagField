@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2958CCB718331C9E00B445F4 /* SMAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2958CCB618331C9E00B445F4 /* SMAccessoryView.m */; };
 		7831655F17CC959A007FB564 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7831655E17CC959A007FB564 /* ViewController.xib */; };
 		787665671771C9E5006F4888 /* SMTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 787665641771C9E5006F4888 /* SMTag.m */; };
 		787665681771C9E5006F4888 /* SMTagField.m in Sources */ = {isa = PBXBuildFile; fileRef = 787665661771C9E5006F4888 /* SMTagField.m */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2958CCB518331C9E00B445F4 /* SMAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAccessoryView.h; sourceTree = "<group>"; };
+		2958CCB618331C9E00B445F4 /* SMAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAccessoryView.m; sourceTree = "<group>"; };
 		781AA856177857AD00D505B5 /* SMTagFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTagFieldDelegate.h; sourceTree = "<group>"; };
 		7831655E17CC959A007FB564 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		787665631771C9E5006F4888 /* SMTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SMTag.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -63,6 +66,8 @@
 		787665621771C9D6006F4888 /* SMTagField */ = {
 			isa = PBXGroup;
 			children = (
+				2958CCB518331C9E00B445F4 /* SMAccessoryView.h */,
+				2958CCB618331C9E00B445F4 /* SMAccessoryView.m */,
 				787665631771C9E5006F4888 /* SMTag.h */,
 				787665641771C9E5006F4888 /* SMTag.m */,
 				787665651771C9E5006F4888 /* SMTagField.h */,
@@ -197,6 +202,7 @@
 				78A439A11771C99E00BD1AE5 /* main.m in Sources */,
 				78A439A51771C99E00BD1AE5 /* AppDelegate.m in Sources */,
 				78A439AE1771C99E00BD1AE5 /* ViewController.m in Sources */,
+				2958CCB718331C9E00B445F4 /* SMAccessoryView.m in Sources */,
 				787665671771C9E5006F4888 /* SMTag.m in Sources */,
 				787665681771C9E5006F4888 /* SMTagField.m in Sources */,
 			);

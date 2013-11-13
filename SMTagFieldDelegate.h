@@ -42,4 +42,13 @@
  */
 -(BOOL) tagField: (SMTagField *) tagField shouldAddTag: (NSString *) tag;
 
+
+/**
+    Provides a list of autocomplete tags to SMTagField.
+ @param tagField The tagField
+ @param text The text just entered
+ @return array of tags
+ */
+-(NSArray *)tagField: (SMTagField *)tagField autoCompleteTagsForTextEntered:(NSString *)text;
+
 @end

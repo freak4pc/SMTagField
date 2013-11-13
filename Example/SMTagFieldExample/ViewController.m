@@ -22,6 +22,7 @@
     
     log.editable                = NO;
     tagField.tagDelegate        = self;
+    [tagField setupAutoComplete];
     
     tagField.tags               = @[@"Tag1", @"Tag2", @"Tag3"];
 }
@@ -44,6 +45,10 @@
         return NO;
     
     return YES;
+}
+
+-(NSArray *)tagField:(SMTagField *)tagField autoCompleteTagsForTextEntered:(NSString *)text {
+    return @[@"AutoTag1", @"AutoTag2", @"AutoTag3"];
 }
 
 @end

@@ -10,6 +10,7 @@
 @interface SMTagField(){
     UIView              *tagsView;
     UIView              *paddingView;
+    SMAccessoryView *autoCompleteView;
 }
 
 -(void) layoutTags;
@@ -56,10 +57,17 @@
 {
     if(self.text.length == 0) return;
     
-    unichar lastChar    = [self.text characterAtIndex: self.text.length - 1];
     
-    if(lastChar == ' ' ||
-       lastChar == ','){
+    if ([tagDelegate respondsToSelector:@selector(tagField:autoCompleteTagsForTextEntered:)]) {
+        NSArray *autoCompleteTags = [tagDelegate tagField:self autoCompleteTagsForTextEntered:self.text];
+        autoCompleteView.tags = autoCompleteTags;
+    }
+    
+    //get last character
+    NSString *lastChar = [self.text substringFromIndex:self.text.length - 1];
+    
+    //use array of seprators to check if tag is complete
+ if ([self.tagSeparators containsObject:lastChar]) {
         NSString *txtTag= [self.text substringToIndex: self.text.length - 1];
         
         if(txtTag.length == 0){
@@ -117,6 +125,30 @@
     [self layoutTags];
 }
 
+
+-(void)setupAutoComplete {
+    //if autocompletedelegate is implemented then set accessaryview
+    if ([tagDelegate respondsToSelector:@selector(tagField:autoCompleteTagsForTextEntered:)]) {
+        autoCompleteView = [[SMAccessoryView alloc] initWithFrame:self.frame];
+        autoCompleteView.delegate = self;
+        self.inputAccessoryView = autoCompleteView;
+        
+    }
+}
+
+-(void)autoCompleteTagTapped:(SMTag *)tag {
+    
+    self.text = [tag.value stringByAppendingString:self.tagSeparators[0]];
+    
+    NSNotification *myTextFieldUpdateNotification  =
+    [NSNotification notificationWithName:UITextFieldTextDidChangeNotification
+                                  object:self];
+    
+    [NSNotificationCenter.defaultCenter
+     postNotification:myTextFieldUpdateNotification];
+    //    [self textFieldDidChange: aNotification];
+}
+
 #pragma mark - View Flow
 
 -(void)awakeFromNib{
@@ -128,6 +160,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UITextFieldTextDidChangeNotification" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UITextFieldTextDidEndEditingNotification" object:nil];
 }
+
+
 
 #pragma mark - Private Methods
 -(void)setupUI{
@@ -148,6 +182,10 @@
     self.leftView               = paddingView;
     self.leftViewMode           = UITextFieldViewModeAlways;
     
+    //default value for tag separators
+    self.tagSeparators = @[@" ", @","];
+
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(textFieldDidChange:)
                                                  name:@"UITextFieldTextDidChangeNotification"
@@ -162,6 +200,9 @@
     if(![tagsView isDescendantOfView: self])
         [self addSubview: tagsView];
 }
+
+
+
 
 -(void)layoutTags{
     [tagsView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
